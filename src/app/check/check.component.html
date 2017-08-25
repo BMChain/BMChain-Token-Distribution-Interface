@@ -1,0 +1,105 @@
+<div class="wrapper">
+
+  <!-- 2 -->
+  <div class="container pt-5" >
+    <div class="row">
+      <div class="col-md-12">
+
+        <p class="messageText font-italic" translate>
+          step1_message <a href="" class="btn btn-primary ml-2 mt-1" routerLink="/members-area" translate>skip_step</a>
+        </p>
+
+        <h2 translate>check_your_wallet</h2>
+        <p translate>
+          check_your_wallet_message_1
+        </p>
+
+        <div class="w-70">
+          <label class="" id="myaddress" translate>check_input_public_key</label>
+          <input type="text" class="form-control form-control-lg" [(ngModel)]="myWallet.address" placeholder="" aria-label="Address"
+                 aria-describedby="">
+          <p style="color:red; font-size: small" *ngIf="myWallet.address">{{myWallet.address && web3.getPublicKeyError(myWallet.address)}}</p>
+        </div>
+        <div class="pt-2 w-70">
+          <label class="" id="mypk" translate>check_input_private_key</label>
+          <input class="form-control form-control-lg" aria-label="PK" [(ngModel)]="myWallet.privateKey" style="width: 100%"
+                 aria-describedby="">
+          <p style="color:red; font-size: small" *ngIf="myWallet.privateKey">{{myWallet.privateKey && web3.getPrivateKeyError(myWallet.privateKey)}}</p>
+        </div>
+
+        <div class="pt-2 w-50">
+          <button type="button" (click)="checkwallet()" class="btn btn-primary mr-2" translate>check_btn_check</button>
+        </div>
+        <p class="pt-2" translate>
+          check_your_wallet_message_2
+        </p>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+  <!--  -->
+  <div class="container" >
+    <div class="row">
+      <div class="col-md-12">
+        <h2 translate>check_refill_wallet</h2>
+        <p *ngIf="isVerifedAccount()" translate>
+          chech_address_wallet_1 <span class="highlight simpleText">{{myWallet.address}}</span>. <span translate>chech_address_wallet_2</span>
+        </p>
+        <div *ngIf="i18nService.language == 'RU'">
+        <p translate>
+          check_refill_from_exchange
+        </p>
+        <ul>
+          <li><a href="https://100monet.pro/?r=8627" target="_blank">www.100monet.pro</a></li>
+          <li><a href="https://xchange.is/?rid=15024445914227" target="_blank">www.xchange.is</a></li>
+          <li><a href="https://cashbank.pro/?rid=11747" target="_blank">www.cashbank.pro</a></li>
+          <li><a href="https://newline.online/?rid=4679" target="_blank">www.newline.online</a></li>
+          <li><a href="https://imexchanger.pro/ru/rid15113/" target="_blank">www.imexchanger.pro/ru/</a></li>
+          <li><a href="https://z-exchange.ru/?rid=1220" target="_blank">www.z-exchange.ru</a></li>
+        </ul>
+        <p translate>
+          check_select_exchanger <a href="https://www.bestchange.ru/?p=261339" target="_blank">www.bestchange.ru</a>.
+        </p>
+        <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="false"
+           aria-controls="collapseExample" translate>
+          check_exchanger_instruction
+        </a>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <p translate>
+              check_exchanger_instruction_msg_1
+              <a href="https://xchange.is/?rid=15024445914227" target="_blank">www.xchange.is</a>.
+            </p>
+            <p translate>
+              check_exchanger_instruction_msg_2
+            </p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+  <!--  -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 translate>check_use_cabinet_for_ico</h2>
+        <button type="button" class="btn btn-primary btn-lg mt-2" (click)="GoToInvestArea()" translate>
+          check_goto_cabinet <i class="fa fa-chevron-right ml-2"></i>
+        </button>
+
+        <hr>
+      </div>
+    </div>
+  </div>
+
+  <footer class="">
+    <div class="container">
+      <p class="text-muted text-center" translate>check_footer</p>
+    </div>
+  </footer>
+
+</div>

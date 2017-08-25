@@ -1,0 +1,90 @@
+<div class="wrapper">
+
+  <!-- 1 -->
+  <div class="container pt-5" *ngIf="step === 0">
+    <div class="row">
+      <div class="col-md-12">
+
+        <p class="messageText font-italic" translate>
+          step1_message <a href="" class="btn btn-primary ml-2 mt-1" routerLink="/check" translate>skip_step</a>
+        </p>
+
+        <h2 translate>step1_title</h2>
+
+        <p translate>
+          step1_text1
+        </p>
+
+        <div class="row mt-5">
+          <div class="col-md-9 col-sm-12">
+            <label class="" id="address" translate>step1_your_public_address</label>
+            <input type="text" class="form-control form-control-lg" [value]="wallet.address" placeholder="" aria-label="Address"
+                   aria-describedby="" readonly>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-9 col-sm-12 pt-2">
+            <label class="" id="pk" translate>step1_your_private_address</label>
+            <input class="form-control form-control-lg" aria-label="PK" [value]="wallet.privateKey" style="width: 100%"
+                   aria-describedby="" readonly>
+          </div>
+        </div>
+
+        <div class="mt-3 w-50">
+          <button type="button" (click)="GenerateNew()" class="btn btn-secondary" translate>generate_new_wallet</button>
+        </div>
+        <p class="pt-4">
+        </p>
+        <div class="dangerText">
+          <h4>
+            <span translate>save_public_and_priv_key_desc1</span> <br>
+            <span translate>save_public_and_priv_key_desc2</span>
+          </h4>
+        </div>
+
+        <div class="warningText">
+          <p translate>
+            warning_text_1
+          </p>
+          <p translate>
+            warning_text_2
+          </p>
+          <ul>
+            <li translate>
+              warning_text_3
+            </li>
+            <li translate>
+              warning_text_4
+            </li>
+            <li translate>
+              warning_text_5
+            </li>
+            <li translate>
+              warning_text_6
+            </li>
+            <li translate>
+              warning_text_7
+            </li>
+          </ul>
+          <p translate>
+            check_your_data
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary btn-lg mr-2" (click)="GoStep2()"><span translate>i_save_pub_and_private_keys</span> <i
+      class="fa fa-chevron-right ml-1"></i></button>
+    <button type="button" class="btn btn-secondary mr-2" (click)="GoToInvestArea()"><span translate>i_have_ethereum_wallet </span>
+      <i class="fa fa-chevron-right ml-1"></i></button>
+    <hr>
+  </div>
+
+
+  <footer class="">
+    <div class="container">
+      <p class="text-muted text-center" translate>footer_msg</p>
+    </div>
+  </footer>
+
+</div>

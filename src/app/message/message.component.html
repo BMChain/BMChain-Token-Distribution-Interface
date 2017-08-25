@@ -1,0 +1,97 @@
+<div class="modal-header">
+  <h4 class="modal-title" [ngClass]="classTitle" >{{title}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+
+  <p *ngIf="type == 'normal'">
+    {{message}}
+  </p>
+
+  <div *ngIf="type === 'transaction'" class="transaction-message">
+   <p translate>transaction_send</p>
+   <p translate>transaction_view</p>
+   <a target="_blank" href="https://etherscan.io/tx/{{hash}}"><i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;{{hash}}</a>
+  </div>
+
+  <div *ngIf="type === 'validate'">
+    <div translate>you_enter_public_address</div>
+    <div class="eth-address">{{userAddress}}</div>
+    <div translate>pkey_not_matches_public_key</div>
+    <div class="eth-address">{{generatedAddress}}</div>
+
+    <p translate>address_not_matches</p>
+
+    <p translate> step1_desc </p>
+  </div>
+
+
+  <div *ngIf="type === 'invest'">
+
+    <div>
+        <p class="text-black"><span translate>addres_of_wallet</span> {{ invest.verifiedAddress }} ({{invest.balance}} ETH)</p>
+
+        <div>
+        <p>
+          <span translate>summ</span>: <input type="number" (ngModelChange)="invest.manualEdit = true; checkTransaction()" [(ngModel)]="invest.amount" [disabled]="!(invest.fundsLeft < 0) && !invest.manualEdit">
+        </p>
+
+        <p *ngIf="invest.promo"><span translate>promocode</span>: {{invest.promo}}</p>
+        <div *ngIf="invest.checkingDone">
+          <div *ngIf="invest.gasAmount > 0 && invest.fundsLeft>=0">
+            <p ><span translate>comission</span>: {{invest.comission}}</p>
+
+            <p ><span translate>full_cost</span>: {{invest.fullAmount}}</p>
+
+            <p translate>all_right_question</p>
+          </div>
+
+        <div *ngIf="invest.gasAmount==-1">
+          <p style="color:red" translate>transaction_cant_be_sent</p>
+        </div>
+
+        <div *ngIf="invest.fundsLeft < 0">
+          <p style="color:red" translate>not_enough_funds</p>
+        </div>
+
+        </div> <!--checkingDone-->
+        </div>
+
+      <div *ngIf="!invest.checkingDone">
+        <p class="text-center" style="font-size: 54px; color: #ddd">
+          <i class="fa fa-cog fa-spin"></i>
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div *ngIf="type === 'partner'">
+    <app-transaction [send_transaction_caption]="i18.instant('btn_send_transaction')"
+                     [callFunction]="'setPromoToPartner'"
+                     [data]="partner"
+                     [abiContract]="web3.AffiliateProgramABI"
+                     [contractAddress]="web3.AffiliateProgramAddress"
+                     (done)="createPartnerDone($event)">
+
+    </app-transaction>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <div style="width: 100%" *ngIf="(type === 'invest') && invest.gasAmount > 0 && invest.fundsLeft>=0">
+    <app-transaction [send_transaction_caption]="i18.instant('btn_send_transaction')"
+                     [callFunction]="'buy'"
+                     [data]="invest"
+                     [abiContract]="web3.PreICOABI"
+                     [contractAddress]="web3.PreICOAddress"
+                     (done)="investDone($event)">
+    </app-transaction>
+  </div>
+
+  <!--<button *ngIf="(type === 'invest') && invest.gasAmount > 0 && invest.fundsLeft>=0"  type="button" class="btn btn-primary" (click)="sendTransaction()" translate>btn_send_transaction</button>-->
+  <button *ngIf="type !== 'invest'" type="button" class="btn btn-primary" (click)="activeModal.dismiss('Cross click')" translate>btn_close</button>
+</div>

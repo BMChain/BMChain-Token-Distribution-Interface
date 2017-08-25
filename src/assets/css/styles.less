@@ -1,0 +1,137 @@
+// Colors
+@color-text: #000;
+@color-text-white: #fff;
+@color-text-light: #ccc;
+
+@color-bg-input: #333;
+@color-bg-input-disabled: #333;
+
+@color-link: #ff5f30;
+@color-placeholder: #a3a3a3;
+@color-border: #e5e5e5;
+@color-border-darker: #cdcdcd;
+@color-field-border: #cacaca;
+
+@color-txt-grey: #6a6969;
+@color-yellow: #b9d135;
+@color-yellow-hover: #c9eb2f;
+
+// Fonts
+@color-vk: #2d76a2;
+@color-fb: #165595;
+
+// Fonts
+@font-text: 'Futura PT', sans-serif;
+@font-addl: 'Qanelas', sans-serif;
+
+// Paths
+@path-images: "../../assets/img";
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/assets/fonts/FuturaPT-Book.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/FuturaPT-Book.otf') format('opentype'),
+  url('/assets/fonts/FuturaPT-Book.woff') format('woff'),
+  url('/assets/fonts/FuturaPT-Book.ttf') format('truetype');
+  //url('/assets/fonts/FuturaPT-Book.svg#FuturaPT-Book') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/assets/fonts/FuturaPT-Light.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/FuturaPT-Light.otf') format('opentype'),
+  url('/assets/fonts/FuturaPT-Light.woff') format('woff'),
+  url('/assets/fonts/FuturaPT-Light.ttf') format('truetype');
+  //url('/assets/fonts/FuturaPT-Light.svg#FuturaPT-Book') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/assets/fonts/FuturaPT-Medium.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/FuturaPT-Medium.otf') format('opentype'),
+  url('/assets/fonts/FuturaPT-Medium.woff') format('woff'),
+  url('/assets/fonts/FuturaPT-Medium.ttf') format('truetype');
+  //url('/assets/fonts/FuturaPT-Medium.svg#FuturaPT-Book') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+button {
+  cursor: pointer;
+  &:disabled {
+    cursor: no-drop;
+  }
+}
+
+footer {
+  margin-top: 50px;
+  height: 60px;
+  padding-top: 15px;
+}
+
+.wrapper {
+  background: #000 url('@{path-images}/top-bg.jpg') top no-repeat;
+  font-family: Futura PT, Arial;
+}
+
+h1, h2, h3 {
+  color: @color-yellow;
+  font-weight: 300;
+}
+
+p {
+  color: @color-text-light;
+  font-weight: 300;
+}
+
+a {
+  color: @color-yellow;
+  &:hover {
+    color: @color-yellow-hover;
+  }
+}
+
+label {
+  color: @color-text-light;
+}
+
+.form-control {
+  background-color: @color-bg-input;
+  opacity: 1;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: @color-bg-input-disabled;
+  opacity: 1;
+}
+
+.btn {
+  border-radius: 1rem;
+
+  &.btn-primary {
+    background: @color-yellow;
+    border: @color-yellow;
+    color: #000;
+
+    &:hover {
+      background-color: @color-yellow-hover;
+    }
+  }
+
+  &.btn-secondary {
+    background: transparent;
+    border-color: @color-yellow;
+    color: @color-yellow;
+
+    &:hover {
+      border-color: @color-yellow-hover;
+    }
+  }
+
+
+}

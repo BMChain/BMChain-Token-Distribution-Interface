@@ -1,0 +1,182 @@
+<div class="wrapper">
+
+  <!--  -->
+  <div class="container">
+    <div class="row justify-content-center mt-5" *ngIf="!showFullContent">
+      <div class="col-md-9 col-12 pt-2 text-center">
+        <h2 class="mb-3"><span translate>you_should_agree_description1</span> <br>
+          <span translate>you_should_agree_description2</span>
+          </h2>
+        <label for="pk" class="white" translate>you_address_in_Ethereum</label>
+        <input id="pk" class="form-control form-control-lg" [(ngModel)]="address" (ngModelChange)="addressChanges()"
+               aria-describedby="">
+        <p style="color:red" *ngIf="addressError">{{addressError}}</p>
+
+        <div class="aggrementContainer mt-2">
+          <div class="checkbox">
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" [(ngModel)]="isAgree" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+            </label>
+          </div>
+          <div class="aggrement">
+            <p>
+              <span translate>I_agree_i_not_an_USA_citizen</span> <br>
+              <a href="https://bmchain.io/download/BMCHAIN_Whitepaper_{{i18nService.language.toLowerCase()}}.pdf" target="_blank"><span translate>tech_desc_system</span></a>,
+              <a href="https://bmchain.io/download/BMCHAIN_token_distribution_agreement_{{i18nService.language.toLowerCase()}}.pdf" target="_blank"><span translate>agree_abount_distribution_tokens</span></a>
+              <!--и <a href="https://bmchain.io/download/BMCHAIN_terms_of_use_ru.pdf" target="_blank">Условиями&nbsp;использования</a>-->
+            </p>
+          </div>
+        </div>
+        <button type="button" class="btn btn-white btn-lg" style="-webkit-appearance: none;" id="btnBecomeMember" (click)="Enter()" [disabled]="!address || !isAgree || !isAddressValid()" translate>btn_enter</button>
+        <br>
+        <button type="button" class="btn btn-secondary btn-lg mt-3" style="-webkit-appearance: none;" id="btnDontHaveWallet" routerLink="/create-wallet" translate>dont_have_wallet</button>
+      </div>
+    </div>
+  </div>
+
+  <!--  -->
+  <div class="container" *ngIf="showFullContent">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="messageText font-italic" translate>
+          awesome_user
+        </p>
+        <div class="dangerText">
+          <h4>
+            <span translate>sending_warning_1</span> <br>
+            <span translate>sending_warning_2</span> <br>
+            <span translate>sending_warning_3</span>
+          </h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <h2 translate>wallet_information</h2>
+        <p>
+          <!--Ваш кошелек: <span class="highlight">{{address}}</span><br>-->
+          <span translate>your_wallet_address</span>: <br>
+          <span class="highlight simpleText">{{address}}</span> <a href="" class="ml-2" (click)="showFullContent = false; isAgree = false;"><span translate>use_another</span></a>
+        </p>
+        <p>
+          <span translate>ETH balance</span>: <br>
+          <span class="highlight">{{balance}}&nbsp;ETH</span>
+        </p>
+        <p>
+          <span translate>BMT balance</span>: <br>
+          <span class="highlight">{{balanceBMT}}&nbsp;BMT</span>
+        </p>
+      </div>
+      <div class="col-md-6">
+        <h2 translate>ico_information</h2>
+        <p>
+          <span translate>current_ICO_step</span>: <br>
+          <span class="highlight">Pre-ICO</span>
+        </p>
+        <p>
+          <span translate>pre-ico address</span>: <br>
+          <span class="highlight simpleText">{{web3.PreICOAddress}}</span> <a href="https://etherscan.io/address/{{web3.PreICOAddress}}" class="ml-2" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> Etherscan</a>
+        </p>
+      </div>
+      <hr>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h2 translate>send_eth_to_smart_contract</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <label class="" id="amount" translate>eth_sum</label>
+        <input type="number" min="0.1" class="form-control form-control-lg" placeholder="" [(ngModel)]="amount" aria-label="Address"
+               aria-describedby="sizing-addon2">
+        <span *ngIf="amount*priceUSD">~ {{(amount*priceUSD).toFixed(2)}}$ </span>
+      </div>
+
+
+      <!--*ngIf="showPromoField"-->
+      <div class="col-md-4">
+        <label class="" id="promocode" translate>promocode</label>
+        <input type="text" class="form-control promocodeInput form-control-lg" placeholder="" maxlength="6" [(ngModel)]="promo"
+               aria-label="Address"
+               aria-describedby="sizing-addon2">
+        <p translate>
+          promo_bonus_description
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <br>
+        <button type="button" class="btn btn-primary mr-2 mt-2" (click)="Invest()" translate>send</button>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 mt-5">
+        <h2 translate>your_transactions</h2>
+        <div>
+          <table class="table table-inverse">
+            <thead>
+            <tr>
+              <th translate>transaction</th>
+              <th translate>date</th>
+              <th translate>summ</th>
+              <th translate>ico_step</th>
+              <th translate>status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let t of transactions">
+              <td><a target="_blank" href="https://etherscan.io/tx/{{t.hash}}">{{t.hash}}</a></td>
+              <td [title]="t.fulltimestamp" >{{t.timestamp}}</td>
+              <td>{{t.value}} ETH</td>
+              <td>{{t.step}}</td>
+              <td>
+                <i *ngIf="t.success"  style="color: green" class="fa fa-check green" aria-hidden="true"></i>
+                <i *ngIf="!t.success" style="color: red" class="fa fa-times red"  aria-hidden="true"></i>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" translate>total</td>
+              <td>{{total_invested}} ETH</td>
+              <td></td>
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row semiopacity">
+      <div class="col-md-12">
+        <h2><span class="text-muted"><span translate>get_tokens</span>&nbsp;<sup><span translate>after</span> 15.09.2017</sup></span></h2>
+        <p translate>
+          get_tokens_description
+        </p>
+        <div class="pt-2">
+          <p>
+            <span translate>your_BMT_balance</span>: <span class="highlight">0&nbsp;BMT</span>
+          </p>
+        </div>
+        <div class="input-group pt-2">
+          <button type="button" class="btn btn-primary mr-2" disabled translate>request_tokens</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="">
+    <div class="container">
+      <p class="text-muted text-center" translate>footer_msg</p>
+    </div>
+  </footer>
+
+</div>

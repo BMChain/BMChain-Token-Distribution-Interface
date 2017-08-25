@@ -1,0 +1,84 @@
+<div class="wrapper">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 pt-5">
+        <h1 class="text-center" translate>partner_program_bmchain</h1>
+      </div>
+    </div>
+  </div>
+
+  <!--  -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="pt-2">
+          <label class="" id="pk" translate>check_input_public_key</label>
+          <input class="form-control w-50"  [(ngModel)]="myWallet.address" (ngModelChange)="checkAddress()" aria-describedby="">
+          <p style="color:red" *ngIf="addressError">{{addressError}}</p>
+        </div>
+        <br>
+        <p *ngIf="isVerifedAccount()">
+          <span translate>balance</span>:<span class="highlight">{{myWallet.balance}}&nbsp;ETH</span><br>
+        </p>
+      </div>
+      <hr>
+    </div>
+
+    <div *ngIf="isVerifedAccount()">
+      <div class="row" *ngIf="!isPartner()">
+        <div class="col-md-12" *ngIf="showBtnCreate==true">
+          <label translate>you_are_still_not_participate_as_partner</label>
+          <button class="btn btn-secondary" (click)="JoinAsPartner()" translate>become_partner</button>
+          <br>
+        </div>
+        <hr>
+      </div>
+      <div class="row" *ngIf="isPartner()">
+        <div class="col-md-12">
+          <label class=""><span translate>promo_code</span>: <span class="highlight">{{myWallet.promo}}</span></label>
+          <br>
+          <label class=""><span translate>ref_link</span>: <a href="https://ico.bmchain.io/members-area?r={{myWallet.promo}}"><span class="highlight">https://ico.bmchain.io/members-area?r={{myWallet.promo}}</span></a></label>
+        </div>
+        <hr>
+      </div>
+
+      <div class="row" *ngIf="isPartner()">
+        <h2 translate>your_referrals</h2>
+        <div class="col-md-12 pt-3">
+          <!--<div>-->
+            <table class="table table-inverse table-responsive">
+              <thead>
+              <tr>
+                <th translate>date</th>
+                <th translate>referral</th>
+                <th translate>summ</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let t of referrals">
+                <td>{{date(t.datetime)}}</td>
+                <td>{{t.refferal}}</td>
+                <td>{{toETH(t.invest)}} ETH</td>
+              </tr>
+              <tr>
+                <td colspan="2" translate>total</td>
+                <td>{{toETH(myWallet.totalInvestments)}} ETH</td>
+              </tr>
+              </tbody>
+            </table>
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="">
+    <div class="container">
+      <p class="text-muted text-center" translate>footer_msg</p>
+    </div>
+  </footer>
+
+</div>

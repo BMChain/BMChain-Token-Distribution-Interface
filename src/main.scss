@@ -1,0 +1,306 @@
+/*
+ * Entry point of global application style.
+ * Component-specific style should not go here and be included directly as part of the components.
+ */
+
+// Colors
+$color-text: #000;
+$color-text-white: #fff;
+$color-text-light: #ccc;
+
+$color-bg-input: #333;
+$color-bg-input-focus: #3a3a3a;
+$color-bg-input-disabled: #333;
+
+$color-link: #ff5f30;
+$color-placeholder: #a3a3a3;
+$color-border: #e5e5e5;
+$color-border-darker: #cdcdcd;
+$color-field-border: #cacaca;
+
+$color-txt-grey: #6a6969;
+$color-yellow: #b9d135;
+$color-yellow-hover: #c9eb2f;
+
+// Fonts
+$color-vk: #2d76a2;
+$color-fb: #165595;
+
+// Fonts
+$font-text: "Futura PT", sans-serif;
+$font-addl: "Qanelas", sans-serif;
+
+// Paths
+$path-images: "../../assets/img";
+
+// Theme variables, must be included before the libraries to allow overriding defaults
+@import "theme/theme-variables";
+
+// 3rd party libraries
+@import "~bootstrap/scss/bootstrap";
+@import "~font-awesome/scss/font-awesome.scss";
+
+// Theme customization
+@import "theme/theme";
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("/assets/fonts/FuturaPT-Book.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/FuturaPT-Book.otf") format("opentype"), url("/assets/fonts/FuturaPT-Book.woff") format("woff"), url("/assets/fonts/FuturaPT-Book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("/assets/fonts/FuturaPT-Light.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/FuturaPT-Light.otf") format("opentype"), url("/assets/fonts/FuturaPT-Light.woff") format("woff"), url("/assets/fonts/FuturaPT-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("/assets/fonts/FuturaPT-Medium.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/FuturaPT-Medium.otf") format("opentype"), url("/assets/fonts/FuturaPT-Medium.woff") format("woff"), url("/assets/fonts/FuturaPT-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+.simpleText {
+  font-family: monospace;
+  text-transform: lowercase;
+  font-size: 1.1em;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: no-drop;
+}
+
+footer {
+  margin-top: 50px;
+  height: 60px;
+  padding-top: 15px;
+}
+
+body {
+  background: #000 url("/assets/img/top-bg.jpg") top no-repeat;
+}
+
+.table-inverse {
+  color: #ccc;
+  background-color: #212529;
+  th {
+    font-weight: 500;
+  }
+  th, td {
+    border-color: #32383e !important;
+  }
+}
+
+.wrapper {
+  font-family: $font-text;
+  color: #ccc;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #b9d135;
+  font-weight: 300;
+}
+
+label {
+  color: #b9d135;
+  font-weight: 300;
+
+  &.white {
+    color: #fff;
+  }
+}
+
+.highlight {
+  background: rgba(185,209,53,.3);
+  padding: 0 5px;
+}
+
+p {
+  color: #ccc;
+  font-weight: 300;
+}
+
+a {
+  color: #b9d135;
+}
+
+a:hover {
+  color: #c9eb2f;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+.form-control {
+  background-color: #333;
+  opacity: 1;
+  color: #ccc;
+  font-family: monospace;
+  text-transform: lowercase;
+
+  &:focus {
+    background-color: #3a3a3a;
+    color: #ccc;
+  }
+
+  &.white {
+    background-color: #eee;
+    color: #222;
+    &:focus {
+      background-color: #eee;
+      color: #222;
+    }
+    &[disabled],
+    &.disabled {
+      background-color: #eee;
+      color: #666;
+    }
+    &[readonly] {
+      background-color: #eee;
+      color: #222;
+    }
+  }
+
+}
+
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: #333;
+  opacity: 1;
+}
+
+.btn {
+  border-radius: 1rem;
+  font-family: $font-text;
+  margin-bottom: 5px;
+}
+
+.btn.btn-primary {
+  background: #b9d135;
+  border: #b9d135;
+  color: #000;
+}
+
+.btn.btn-primary:hover {
+  background-color: #c9eb2f;
+}
+
+.btn.btn-secondary {
+  background: transparent;
+  border-color: #b9d135;
+  color: #b9d135;
+
+  &.white {
+    border-color: #666;
+    color: $color-text-light;
+  }
+}
+
+.btn.btn-secondary:hover {
+  border-color: #c9eb2f;
+}
+
+.modal {
+  .modal-header {
+    background: $color-yellow;
+    h4 {
+      color: $color-text;
+      font-weight: 400;
+    }
+  }
+
+  .modal-body {
+    p {
+      color: $color-text;
+    }
+  }
+
+  .modal-footer {
+  }
+}
+
+.warningText {
+  margin: 0;
+  border-left: 4px solid red;
+  padding: 15px 40px;
+  background: rgba(255,255,255,.03);
+  margin-bottom: 20px;
+}
+
+.dangerText {
+  border-left: 4px solid red;
+  padding: 15px 40px;
+  background: rgba(220, 53, 53, 0.2);
+  margin-bottom: 20px;
+
+  h1,h2,h3,h4 {
+    color: #fff !important;
+  }
+}
+
+.dangerTextSmallDark {
+  border-left: 4px solid red;
+  padding: 15px 40px;
+  background: rgb(255, 229, 229);
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+  h1,h2,h3,h4 {
+    color: #fff !important;
+  }
+}
+
+.messageText {
+  padding: 7px 20px;
+  background: rgba(170, 209, 53, 0.28);
+  font-size: 18px;
+}
+
+.semiopacity {
+  opacity: 0.5;
+}
+
+.text-black {
+  color: #222;
+}
+
+.aggrementContainer {
+  .checkbox {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .aggrement {
+    display: inline-block;
+    text-align: left;
+    max-width: 500px;
+  }
+}
+
+.table {
+  &.transactions {
+    .red {
+      color: red;
+    }
+    .green {
+      color: #3fff1a;
+    }
+
+  }
+}

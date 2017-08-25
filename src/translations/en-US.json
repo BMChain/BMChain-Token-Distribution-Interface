@@ -1,0 +1,163 @@
+{
+  "app_name" : "BMCHAIN TDI",
+  "menu_item_1" : "Creating a new wallet",
+  "menu_item_2" : "Validation and refilling",
+  "menu_item_3" : "Participant's account",
+  "menu_item_4" : "Affiliate program",
+
+  "step1_title" : "1. Creating a new Ethereum wallet",
+  "step1_message" : "If you already have a wallet in Ethereum network (Metamask, MyEtherWallet, Parity, etc.) and you know how to use it you can",
+  "skip_step" : "skip this step",
+  "step1_text1" : "To participate in the distribution of BMT tokens, it is necessary to send ethers (ETH) to the address of the ICO smart contract. This process requires an Ethereum wallet. We have already created a wallet for you in Ethereum network, which can be used for you to participate in the ICO.",
+  "transaction_send" : "Transaction has been sent to blockchain.",
+  "transaction_view" : "Check the transaction via Etherscan:",
+  "address_not_matches" : "Addresses don't match!",
+  "step1_desc": "Go to Step 1. Generate private/public keys. Save them in a save place and repeat the validation procedure.",
+
+  "enter_pkey" : "Paste your private key",
+  "addres_of_wallet" : "Wallet address: ",
+
+  "alarm_private_key_not_matches" : "Attention, the private key you pasted doesn't match the one specified by you in the Participant's account!",
+
+  "summ" : "Sum",
+  "comission" : "Transaction fee",
+  "full_cost" : "Total cost",
+  "balance" : "Balance",
+
+  "all_right_question" : "Is everything correct?",
+  "transaction_cant_be_sent" : "Transaction cannot be sent.",
+  "not_enough_funds" : "You have insufficient balance. Try to decrease the transaction sum.",
+  "btn_close" : "Close",
+  "btn_send_transaction": "Send transaction",
+
+  "pkey_not_matches_public_key" : "Your private key matches the following address:",
+  "you_enter_public_address" : "You specified the public address:",
+
+  "success" : "Success",
+  "checking_done_success" : "Validation has succeeded",
+  "error" : "Error",
+  "sending_eth_to_smart_contract" : "Sending ETH to the smart contract",
+
+  "your_wallet_address" : "Your wallet address",
+  "ETH balance" : "ETH balance",
+  "BMT balance" : "BMT balance",
+  "current_ICO_step" : "Current ICO period",
+  "pre-ico address" : "Pre-ICO contract address",
+  "send_eth_to_smart_contract" : "Sending ETH to the smart contract using private key",
+  "eth_sum" : "Sum, ETH",
+  "promocode" : "Promo-code",
+  "promo_bonus_description" : "Enter promo-code and get 1% tokens more",
+  "send" : "Send",
+  "your_transactions" : "Your transactions",
+  "transaction" : "Transaction",
+  "date" : "Data",
+  "status" : "Status",
+  "after" : "after",
+  "get_tokens" : "Requesting tokens",
+  "get_tokens_description" : "On September, 15th the first period of BMT token distribution will end. Immediately after that 'Request tokens' button will become available and you will be able to get your BMT tokens.",
+  "your_BMT_balance" : "You BMT balance",
+  "request_tokens" : "Request tokens",
+  "footer_msg" : "BMCHAIN BMT token distribution interface",
+
+  "Error" : "Error",
+  "you_should_agree_description1" : "Confirm you agreement with the terms of participation,",
+  "you_should_agree_description2" : "paste your wallet address and press 'Login'",
+  "you_address_in_Ethereum" : "Your Ethereum wallet address",
+
+  "I_agree_i_not_an_USA_citizen" : "I confirm that I am not a US citizen, I am not a representative of a US citizen, and also I read, understood and agree with",
+
+  "tech_desc_system" : "Whitepaper (system technical description)",
+
+  "agree_abount_distribution_tokens" : "Token distribution agreement",
+
+  "use_another" : "use another",
+
+  "btn_enter" : "Login",
+
+  "pub_err_desc1" : "Paste you public key! You pasted the private key which is the main unchangeable password from your account. Don't confuse private and public keys. The public key begins with 0x and is always shorter. ",
+  "pub_err_desc2" : "Incorrect length of the public key. The key must begin with 0x and have 42 symbols.",
+  "pub_err_desc3" : "The key must begin with 0x and have 42 symbols.",
+  "pub_err_desc4" : "The key contains incorrect symbols. The key must begin with 0x and contain the following symbols only: digits 0-9 and latin letters a-f",
+
+  "priv_err_desc1" : "It's necessary to paste your private key. You've pasted your public key. To send the transaction to the smart contract it's necessary to sign it with your private key and send to Ethereum network. The private key itself isn't sent. ",
+  "priv_err_desc2" : "Incorrect length of the private key. The key must contain 64 symbols.",
+  "priv_err_desc3" : "The private key doesn't begin with 0x",
+  "priv_err_desc4" : "The key contains incorrect symbols. The key must begin with 0x and contain the following symbols only: digits 0-9 and latin letters a-f",
+
+  "wallet_information" : "Wallet Information",
+  "ico_information" : "ICO Information",
+
+  "step1_your_public_address" : "The address of your wallet (public key)",
+  "step1_your_private_address" : "Your private key",
+  "generate_new_wallet" : "Generate a new wallet",
+  "save_public_and_priv_key_desc1" : "Be sure to save the public and private keys.",
+  "save_public_and_priv_key_desc2" : "Do not show anyone the private key!",
+  "warning_text_1" : "Take this step with all seriousness. If your private key is lost - you will lose access to your wallet and all the assets that are currently stored on it, and will also be added to it in the future.",
+
+  "warning_text_2" : "Your assets are only under your control. The team of the BMCHAIN project under no circumstances will not be able to restore access to your wallet - it is technically impossible. Blockchain Ethereum ensures that no one, including the creators of the system, can gain control over your assets without having a private key from your wallet.",
+
+  "warning_text_3" : "Creating your wallet by generating an open and private key occurs only on your computer. We do not have access to your wallet and do not store your private key.",
+  "warning_text_4" : "All further operations that require entering your private key involve only signing transactions directly on your computer.",
+
+  "warning_text_5" : "Unlike ordinary passwords, the private key can not be changed.",
+  "warning_text_6" : "If you know the private key, you can learn the public key (but not vice versa!).",
+  "warning_text_7" : "If you are using MetaMask or MyEtherWallet, never specify a private key in the field for additional information 'Transaction data'!",
+  "check_your_data" : "You can check the accuracy of the saved data in the next step.",
+  "i_save_pub_and_private_keys" : "I saved the public and private keys",
+  "i_have_ethereum_wallet" : "I already have a wallet in the network Ethereum",
+
+  "priv_key_wrong_format" : "Private key has an incorrect format",
+  "pub_key_wrong_format" : "Public key has an incorrect format",
+  "msg_info" : "Information",
+  "all_right": "Everything is correct!",
+
+  "check_your_wallet": "2. Check your wallet",
+  "check_your_wallet_message_1": "In the previous step, you should have reliably saved the private and public keys from your wallet. Now you can check if you did everything right. Copy the private and public keys from the place where you saved them, and paste them into the appropriate fields below.",
+  "check_input_public_key": "Specify the public address of your wallet (public key)",
+  "check_input_private_key": "Specify the private key of your wallet",
+  "check_btn_check": "Check",
+  "check_your_wallet_message_2": "Be sure to save the private key from this wallet and do not show it to anyone. If the private key is lost, you will lose access to your wallet and all the assets that are currently stored on it or will be credited to it in the future.",
+  "check_refill_wallet": "3. Refill your wallet with Ether (ETH)",
+  "chech_address_wallet_1": "The address of your wallet: ",
+  "chech_address_wallet_2": "That's it you need to refill.",
+  "check_refill_from_exchange": "The easiest way to refill the wallet with Ether is to transfer it from the exchange, or, if you do not have an Ether, - use the services of exchangers:",
+  "check_select_exchanger": "You can choose an exchanger",
+  "check_exchanger_instruction": "Learn more about working with exchangers",
+  "check_exchanger_instruction_msg_1": "By its principle, the work of the exchangers is identical. Consider the deposit scheme through the exchanger",
+  "check_exchanger_instruction_msg_2": "In the first list, choose the most convenient depositing method, in the second drop-down list - ETH. Fill in all the empty fields, enter the address of your ETH wallet, starting at 0x .., click the \"Start Exchange\" button. It remains to follow the instructions of the exchanger and wait for the transfer of ETH to the purse.",
+  "check_use_cabinet_for_ico": "4. Participate in ICO through the account",
+  "check_goto_cabinet": "Go to the Participant's account",
+  "check_footer": "BMCHAIN BMT Token Distribution Interface",
+
+  "awesome_user": "If you are an experienced Ethereum user, you can send ethers to Pre-ICO smart contract address using any convenient wallet: Metamask, Myetherwallet, Parity, Mist",
+  "sending_warning_1": "Attention! Send ETH only from your personal wallet which private key belongs to you.",
+  "sending_warning_2": "Don't send ETH from the balance of exchanges, agencies or third parties.",
+  "sending_warning_3": "Don't use Ethereum wallet mobile application by freewallet.org.",
+  "dont_have_wallet": "I'm new in blockchain and don't have any wallets",
+
+  "how_do_you_want_to_acccess_your_wallet" : "How would  you like to access your wallet?",
+  "private_key" : "Private key",
+  "private_key_only_for_sign_transaction" : "Private key  is used only for signing transactions. We don't transfer the private key  via internet.",
+  "MetaMask_not_found" : "No MetaMask/Parity/Mist or any other ethereum-compatible browser found.",
+  "MetaMask_found" : "Integrated web3-provider has been detected.",
+  "contract_address" : "Contract address",
+  "abi_contract" : "Contract ABI",
+  "function_to_call" : "Request function",
+  "go_to_myetherwallet_com" : "Go to myetherwallet.com",
+
+  "you_are_still_not_participate_as_partner" : "You haven't signed up as an affiliate yet",
+  "become_partner" : "Sign up as an affiliate",
+  "promo_code" : "Promo-code",
+  "ref_link" : "Referal link",
+  "your_referrals" : "Your referals",
+  "referral" : "Referal",
+  "partner_program_bmchain" : "BMChain Affiliate Program",
+
+  "register_as_partner" : "Register",
+  "unknown_error_try_again" : "Unknown error, try again later",
+
+  "ico_step" : "Rounds ICO",
+  "private_pre_ico" : "Private PRE-ICO",
+  "pre_ico_step" : "PRE-ICO",
+  "total" : "Total"
+}

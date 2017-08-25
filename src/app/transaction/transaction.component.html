@@ -1,0 +1,43 @@
+<h5 translate>how_do_you_want_to_acccess_your_wallet</h5>
+
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group transaction" role="group">
+    <button type="button" class="btn btn-secondary" (click)="ttype=1" translate>private_key</button>
+    <button type="button" class="btn btn-secondary" (click)="ttype=2">Metamask, Parity, Mist </button>
+    <button type="button" class="btn btn-secondary" (click)="ttype=3">MyEtherWallet</button>
+  </div>
+</div>
+<div class="tab-content" *ngIf="ttype==1">
+  <div class="dangerTextSmallDark">
+    <h6>
+      <span translate>private_key_only_for_sign_transaction</span>
+    </h6>
+  </div>
+  <label translate>enter_pkey</label>
+  <input class="form-control form-control-lg white" [(ngModel)]="privateKey" aria-describedby="">
+  <p style="color: red;font-size: small" *ngIf="privateKey">{{web3.getPrivateKeyError(privateKey)}}</p>
+</div>
+
+<div class="tab-content" *ngIf="ttype==2">
+  <p *ngIf="!web3native.isNativeInstalled()" translate>
+    MetaMask_not_found <button class="btn btn-link" (click)="web3native.loadNativeWeb3()" translate>Update</button>
+  </p>
+  <p *ngIf="web3native.isNativeInstalled()" translate>
+    MetaMask_found
+  </p>
+</div>
+
+<div class="tab-content" *ngIf="ttype==3">
+  <label class="text-black" translate>contract_address</label>
+  <input id="transaction_contract_address" class="form-control form-control-lg white" type="text" [value]="contractAddress" readonly>
+
+  <label class="text-black mt3" translate>abi_contract</label>
+  <input id="transaction_contract_abi" class="form-control form-control-lg white" type="text" [value]="getABIContractStr()" readonly>
+
+  <label class="text-black mt3" translate>function_to_call</label>
+  <input type="text"  class="form-control form-control-lg white" [value]="callFunction" readonly>
+
+</div>
+
+<button *ngIf="ttype > 0 && ttype != 3" [disabled]="!isAllowToSendTransaction()" type="button" class="btn btn-success transaction-btn" (click)="send()">{{send_transaction_caption}}</button>
+<a *ngIf="ttype == 3" class="btn btn-success transaction-btn" href="https://www.myetherwallet.com/#contracts" target="_blank" translate>go_to_myetherwallet_com</a>

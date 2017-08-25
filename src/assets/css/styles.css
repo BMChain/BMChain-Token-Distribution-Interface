@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/assets/fonts/FuturaPT-Book.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/FuturaPT-Book.otf') format('opentype'), url('/assets/fonts/FuturaPT-Book.woff') format('woff'), url('/assets/fonts/FuturaPT-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/assets/fonts/FuturaPT-Light.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/FuturaPT-Light.otf') format('opentype'), url('/assets/fonts/FuturaPT-Light.woff') format('woff'), url('/assets/fonts/FuturaPT-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/assets/fonts/FuturaPT-Medium.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/FuturaPT-Medium.otf') format('opentype'), url('/assets/fonts/FuturaPT-Medium.woff') format('woff'), url('/assets/fonts/FuturaPT-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: no-drop;
+}
+footer {
+  margin-top: 50px;
+  height: 60px;
+  padding-top: 15px;
+}
+.wrapper {
+  background: #000 url('../../assets/img/top-bg.jpg') top no-repeat;
+  font-family: Futura PT, Arial;
+}
+h1,
+h2,
+h3 {
+  color: #b9d135;
+  font-weight: 300;
+}
+p {
+  color: #ccc;
+  font-weight: 300;
+}
+a {
+  color: #b9d135;
+}
+a:hover {
+  color: #c9eb2f;
+}
+label {
+  color: #ccc;
+}
+.form-control {
+  background-color: #333;
+  opacity: 1;
+}
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: #333;
+  opacity: 1;
+}
+.btn {
+  border-radius: 1rem;
+}
+.btn.btn-primary {
+  background: #b9d135;
+  border: #b9d135;
+  color: #000;
+}
+.btn.btn-primary:hover {
+  background-color: #c9eb2f;
+}
+.btn.btn-secondary {
+  background: transparent;
+  border-color: #b9d135;
+  color: #b9d135;
+}
+.btn.btn-secondary:hover {
+  border-color: #c9eb2f;
+}
